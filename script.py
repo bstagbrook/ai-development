@@ -6,7 +6,7 @@ from datetime import datetime
 
 # Log debug information to Google Sheets
 def log_debug_info(location, variable_name, value):
-    sheet_url = "https://script.google.com/macros/s/YOUR_SCRIPT_DEPLOYMENT_ID/exec"
+    sheet_url = "https://script.google.com/macros/s/AKfycbw4VOPGcOq2oH0bfmwxz2AMQuKS0XooREBXIjUBYBg3m9Vh6TN2dcLYao0Tdi4mC0o/exec"
     data = {
         "action": "logDebugInfo",
         "data": {
@@ -35,7 +35,7 @@ username, password = decrypted_credentials.split(":")
 credentials = f"{username}:{password}"
 encoded_credentials = base64.b64encode(credentials.encode('utf-8')).decode('utf-8')
 headers = {
-    "authHeader": f"Basic {encoded_credentials}"
+    "Authorization": f"Basic {encoded_credentials}"
 }
 
 log_debug_info('Python Script', 'encoded_credentials', encoded_credentials)
